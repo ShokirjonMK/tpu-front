@@ -1,0 +1,95 @@
+@import "../../assets/styles/theme";
+
+.login-wrapper{
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+  background-color: #0a3180;
+  .login-card{
+    position: relative;
+    // -webkit-backdrop-filter: blur(10px);
+    // backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    height: 460px;
+    width: 920px;
+
+    display: flex;
+    background-color: $card;
+
+    // img{
+    //   width: 460px;
+    //   border-radius: 1rem 0 0 1rem;
+    // }
+
+    .login-card2{
+      height: 460px;
+      width: 460px;
+      // -webkit-backdrop-filter: blur(10px);
+      // backdrop-filter: blur(10px);
+      padding: 2rem 3rem;
+      border-radius: 1rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .mobile-login-logo{
+        display: none;
+      }
+      .label{
+        color: $text;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 678px){
+  .login-wrapper{
+    width: 92%;
+    margin: 0 auto;
+    .mobile-login-logo{
+      display: block !important;
+    }
+    .login-card{
+      width: 100%;
+      .login_title_card{
+        display: none;
+      }
+      .login-card2{
+        width: 100%;
+        padding: 1rem 1rem;
+      }
+    }
+  }
+}
+
+
+.loader-main {
+  width : 200px;
+  height: 200px;
+  border: 8px dotted;
+  border-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  animation: rotation 2.5s linear infinite;
+}
+.loader-main > img {
+  display: block;
+  animation: no-spin 2.5s linear infinite;
+}
+
+@keyframes no-spin {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotation {
+  0% { transform: rotate(0deg) }
+  100% { transform: rotate(360deg) }
+}
