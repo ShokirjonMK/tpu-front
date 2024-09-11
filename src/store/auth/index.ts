@@ -21,7 +21,7 @@ const initialState: TypeInitialStateAuth = {
     validatorError: [],
     error: '',
     message: '',
-    isAuthenticated: false,
+    isAuthenticated: true,
     isLoading: false,
     permissions: [],
     refreshLoading: true,

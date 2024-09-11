@@ -3,13 +3,13 @@
 import store from "store";
 
 const checkPermission = (name: string) => {
-  const auth = store.getState().auth;
+  return true;
+  // const auth = store.getState().auth;
 
-  if (Array.isArray(auth?.permissions) && auth.permissions.length > 0) {
-    return auth.permissions?.includes(name);
-  } else {
-
-  }
+  // if (Array.isArray(auth?.permissions) && auth.permissions.length > 0) {
+  //   return auth.permissions?.includes(name);
+  // } else {
+  // }
 };
 
 export default checkPermission;

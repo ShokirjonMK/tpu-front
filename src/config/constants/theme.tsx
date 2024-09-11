@@ -2,9 +2,10 @@ import { ThemeConfig } from "antd";
 
 export const antdCustomTheme = (theme: "blue" | "dark" | "light") => {
 
-    const lightTheme :ThemeConfig = {
+    const lightTheme: ThemeConfig = {
         token: {
-            colorPrimary: "#0a3180",
+            // colorPrimary: "#0a3180",
+            colorPrimary: "#144176",
             colorPrimaryBg: "#D6E4FF",
             colorText: "rgba(0, 0, 0, 0.85)",
             colorTextBase: "rgba(0, 0, 0, 1)",
@@ -14,7 +15,7 @@ export const antdCustomTheme = (theme: "blue" | "dark" | "light") => {
             // borderRadius: 4,
             // borderRadiusSM: 4,
         },
-        components:{
+        components: {
             Menu: {
                 colorItemBgSelected: "transparent",
                 colorIconHover: "#fff",
@@ -36,7 +37,7 @@ export const antdCustomTheme = (theme: "blue" | "dark" | "light") => {
         },
     }
 
-    const blueTheme :ThemeConfig = {
+    const blueTheme: ThemeConfig = {
         token: {
             // colorPrimary: "#0a3180",
             // colorPrimaryBg: "#D6E4FF",

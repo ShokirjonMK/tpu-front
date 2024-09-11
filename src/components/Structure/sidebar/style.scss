@@ -3,7 +3,7 @@
 @import "../../../assets/styles/theme";
 @import "../../../assets/styles/sidebar";
 
-:root{
+:root {
   --padding: auto;
 }
 
@@ -22,17 +22,18 @@ $padding: var(--padding);
   position: fixed;
   top: 0;
   left: 0;
-  background-color: $sidebar_bg;
+  // background-color: $sidebar_bg;
+  background-color: #144176;
   z-index: 30;
   transition: 0.1s linear;
   padding: 1rem 0rem;
   padding-top: 0;
-  border-right: 1px solid #F0F0F0;
+  border-right: 1px solid #f0f0f0;
   // display: flex;
   // flex-direction: column;
   // justify-content: center;
 
-  *::selection{
+  *::selection {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
@@ -41,25 +42,22 @@ $padding: var(--padding);
   [data-sidebar="small"] {
     padding: 1rem 0;
   }
-
 }
 
-.container-sidebar-ant-closed-hover{
-  &:hover{
+.container-sidebar-ant-closed-hover {
+  &:hover {
     width: 265px !important;
   }
 }
 
-
-.sidebar-wrapper{
-  &::selection{
+.sidebar-wrapper {
+  &::selection {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
-
   }
 
-  .afu-sidebar-menu{
+  .afu-sidebar-menu {
     // background: $sidebar_menu;
     margin-bottom: 10px;
     // color: #fff;
@@ -78,7 +76,7 @@ $padding: var(--padding);
     h1 {
       font-size: 18px;
       font-weight: 700;
-      color: #1F386A;
+      color: #144176;
       margin: 0;
       margin-left: 12px;
     }
@@ -126,7 +124,8 @@ $padding: var(--padding);
     from {
       font-size: 0;
       margin-left: 0;
-    }to {
+    }
+    to {
       font-size: 18px;
       margin-left: 12px;
     }
@@ -137,7 +136,8 @@ $padding: var(--padding);
       width: 30px;
       margin-left: 8px;
       margin-right: 0px;
-    }to {
+    }
+    to {
       width: 150px;
       margin-left: 0;
       // margin-right: 140px;
@@ -172,33 +172,31 @@ $padding: var(--padding);
       padding-right: 0px !important;
       width: 100% !important;
     }
-    
   }
 
-
-  .ant-menu-inline-collapsed{
+  .ant-menu-inline-collapsed {
     .item-ant,
     .ant-menu-item,
-    .ant-menu-submenu-title{
+    .ant-menu-submenu-title {
       padding: 20px 30px;
       padding-left: 28px !important;
     }
   }
 
-  .ant-menu-submenu{
+  .ant-menu-submenu {
     padding-left: 5px !important;
     padding-top: 5px !important;
     padding: 0px !important;
     margin-bottom: 10px !important;
-    li{
+    li {
       width: 100% !important;
     }
   }
-  .ant-menu-submenu-open .ant-menu-submenu-title{
-    background-color: #274e9b !important;
+  .ant-menu-submenu-open .ant-menu-submenu-title {
+    background-color: #2F5786 !important;
     text-align: center !important;
     position: relative;
-    &::after{
+    &::after {
       position: absolute;
       content: "";
       width: 4px;
@@ -212,37 +210,38 @@ $padding: var(--padding);
     }
   }
 
-  .ant-menu-sub{
+  .ant-menu-sub {
     position: relative;
-    a{
+    a {
       position: relative;
       padding-left: 63px;
     }
 
-    .ant-menu-item-only-child{
-      &:hover{
+    .ant-menu-item-only-child {
+      &:hover {
         background: transparent !important;
       }
       padding-left: 0 !important;
       color: rgba(203, 204, 206, 0.7);
       transition: 0.1s !important;
-      a, span{
+      a,
+      span {
         transition: 0.1s !important;
       }
     }
 
-    .ant-menu-item-selected{
+    .ant-menu-item-selected {
       color: #fff;
     }
-    .ant-menu-item-selected a::before{
+    .ant-menu-item-selected a::before {
       background: #fff;
     }
-    .ant-menu-item-selected a::after{
+    .ant-menu-item-selected a::after {
       border-top: 1px solid #fff;
-    } 
+    }
   }
 
-  .ant-menu-sub a::before{
+  .ant-menu-sub a::before {
     position: absolute;
     content: "";
     width: 5px;
@@ -255,7 +254,7 @@ $padding: var(--padding);
     background: rgba(203, 204, 206, 0.7);
   }
 
-  .ant-menu-sub a::after{
+  .ant-menu-sub a::after {
     position: absolute;
     content: "";
     top: 47%;
@@ -265,7 +264,7 @@ $padding: var(--padding);
     border-top: 1px solid rgba(203, 204, 206, 0.7);
   }
 
-  .ant-menu-sub::before{
+  .ant-menu-sub::before {
     position: absolute;
     content: "";
     width: 1px;
@@ -276,7 +275,4 @@ $padding: var(--padding);
     -webkit-transition: height 0.5s;
     transition: height 0.5s;
   }
-
-
 }
-

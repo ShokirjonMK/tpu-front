@@ -6,7 +6,7 @@ import checkPermission from "utils/check_permission";
 import { Button, Menu, MenuProps, Tag } from "antd";
 import IconComponent from "components/Icon";
 import { TypeRoutes } from "routes/types";
-import logo from "assets/images/brand-white.svg";
+import logo from "assets/images/logo.png";
 import logoKv from "assets/images/afu-logo-kv.jpg";
 import { useTranslation } from "react-i18next";
 import './style.scss';
@@ -43,8 +43,8 @@ const SidebarByAntMenu: FC = (): JSX.Element => {
       if ((checkPermission(item.config.permission) || item.config.permission === "*") && item.config.isMenu) {
         if (item?.submenu?.length) {
           item.submenu.forEach(childItem => {
-            if(childItem.config?.for_roles?.length){
-              if(checkOnlyForRoles(childItem.config?.for_roles)){
+            if (childItem.config?.for_roles?.length) {
+              if (checkOnlyForRoles(childItem.config?.for_roles)) {
                 if ((checkPermission(childItem.config.permission) || childItem.config.permission === "*") && childItem.config.isMenu)
                   childItems.push({
                     key: childItem.path.split("/")[1],
@@ -54,7 +54,7 @@ const SidebarByAntMenu: FC = (): JSX.Element => {
                   })
               }
             } else {
-              if(checkAllowedRole(childItem.config?.not_allowed_roles)){
+              if (checkAllowedRole(childItem.config?.not_allowed_roles)) {
                 if ((checkPermission(childItem.config.permission) || childItem.config.permission === "*") && childItem.config.isMenu)
                   childItems.push({
                     key: childItem.path.split("/")[1],
@@ -66,8 +66,8 @@ const SidebarByAntMenu: FC = (): JSX.Element => {
             }
           })
         }
-        if(item.config?.for_roles?.length){
-          if(checkOnlyForRoles(item.config?.for_roles)){
+        if (item.config?.for_roles?.length) {
+          if (checkOnlyForRoles(item.config?.for_roles)) {
             items.push({
               key: item.path,
               className: "afu-sidebar-menu",
@@ -77,7 +77,7 @@ const SidebarByAntMenu: FC = (): JSX.Element => {
             })
           }
         } else {
-          if(checkAllowedRole(item.config?.not_allowed_roles)){
+          if (checkAllowedRole(item.config?.not_allowed_roles)) {
             items.push({
               key: item.path,
               className: !item?.submenu?.length ? "afu-sidebar-menu" : "",
@@ -111,7 +111,7 @@ const SidebarByAntMenu: FC = (): JSX.Element => {
     } else {
       return createMenuItems(public_routes)
     }
-  }, [i18n.language, ui.sidebar])  
+  }, [i18n.language, ui.sidebar])
 
   let isHoverAndSmall = ui.sidebar === "small" && !ishoverSidebar;
 
@@ -122,15 +122,15 @@ const SidebarByAntMenu: FC = (): JSX.Element => {
           <div className={`flex  w-full items-center ${(!isHoverAndSmall) ? "px-[22px] justify-between" : "justify-center"}`} >
             <img src={(isHoverAndSmall) ? logoKv : logo} className={(isHoverAndSmall) ? "rounded-lg" : ""} alt="" />
             {
-              (!isHoverAndSmall) && 
-              <div className="burger group bg-[#2f5195] p-[7px] pb-[3px] rounded-[6px] cursor-pointer" onClick={() => dispatch(changeSidebar(selectTheme))}>
-                <PiSquaresFour className="text-[23px] group-hover:rotate-[360deg] text-white" style={{transition: "all 0.6s ease-in-out"}} />
+              (!isHoverAndSmall) &&
+              <div className="burger group bg-[#2F5786] p-[7px] pb-[3px] rounded-[6px] cursor-pointer" onClick={() => dispatch(changeSidebar(selectTheme))}>
+                <PiSquaresFour className="text-[23px] group-hover:rotate-[360deg] text-white" style={{ transition: "all 0.6s ease-in-out" }} />
               </div>
             }
           </div>
         </div>
         <div className="container-menu mt-[28px] mx-0">
-          {!isHoverAndSmall ? <Tag className="ml-5 mb-3 text-sm font-semibold px-2 py-[2px]" color="#2f5195" >GENERAL</Tag> : ""}
+          {!isHoverAndSmall ? <Tag className="ml-5 mb-3 text-sm font-semibold px-2 py-[2px]" color="#2F5786" >GENERAL</Tag> : ""}
           <Menu
             selectedKeys={[location.pathname, location.pathname.split("/")[1]]}
             defaultOpenKeys={[location.pathname, ...openKeys]}
@@ -139,7 +139,7 @@ const SidebarByAntMenu: FC = (): JSX.Element => {
             mode="inline"
             inlineCollapsed={(isHoverAndSmall)}
             onOpenChange={onOpenChange}
-            style={{ width: (isHoverAndSmall) ? "100%" : ""}}
+            style={{ width: (isHoverAndSmall) ? "100%" : "" }}
             expandIcon={(e) => <FaChevronRight className={`ml-auto mr-5 transition-all text-[10px] text-[rgba(155,155,155,0.8)] ${(e?.isOpen || e?.isSelected) ? "rotate-90 text-[#fff]" : "rotate-0"}`} />}
           />
         </div>
